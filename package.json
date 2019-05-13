@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\"",
-    "dev": "babel-watch server.js"
+    "start": "NODE_ENV=production node ./server/server"
   },
   "keywords": [],
   "author": "",
