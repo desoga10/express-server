@@ -76,7 +76,7 @@ app.put('/issues/update/:_id', function(req, res) {
   });
 });
 
-//Delete Issues By ID
+//Delete An Issue By ID
 app.delete('/issues/delete/:_id', function(req, res) {
   let id = req.params._id;
   Issue.removeIssue(id, function(err, issue) {
