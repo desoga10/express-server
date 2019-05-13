@@ -25,7 +25,7 @@ MongoClient.connect(uri, function(err, client) {
   client.close();
 });
 
-mongoose.connect('mongodb://localhost/meanstack');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/meanstack');
 let db = mongoose.connection;
 
 db.once('open', () => {
@@ -92,6 +92,6 @@ app.use('/', router);
 // //Static Folder
 // app.use(express.static(path.join(__dirname, 'models')));
 
-app.listen(4000, () =>
+app.listen(process.env.PORT || 4000, () =>
   console.log('The Express Server is Working Consistently on port 4000')
 );
