@@ -13,17 +13,17 @@ app.use(bodyParser.json());
 Issue = require('./models/issue');
 
 // replace the uri string with your connection string.
-// const uri =
-//   'mongodb+srv://desoga:kevinkeegan@cluster0-ltqea.mongodb.net/test?retryWrites=true';
-// MongoClient.connect(uri, function(err, client) {
-//   if (err) {
-//     console.log('Error occurred while connecting to MongoDB Atlas...\n', err);
-//   }
-//   console.log('Connected mongo client...');
-//   const collection = client.db('test').collection('devices');
-//   // perform actions on the collection object
-//   client.close();
-// });
+const uri =
+  'mongodb+srv://desoga:kevinkeegan@cluster0-ltqea.mongodb.net/test?retryWrites=true';
+MongoClient.connect(uri, function(err, client) {
+  if (err) {
+    console.log('Error occurred while connecting to MongoDB Atlas...\n', err);
+  }
+  console.log('Connected mongo client...');
+  const collection = client.db('test').collection('devices');
+  // perform actions on the collection object
+  client.close();
+});
 
 mongoose.connect('mongodb://localhost/meanstack');
 let db = mongoose.connection;
